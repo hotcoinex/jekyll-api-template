@@ -31,9 +31,11 @@
 
 .menu-box .toctree>ul li.toc a{
 	font-size: 20px;
+	font-weight: bold;
 }
 .menu-box .toctree>.menu-uls .child-ul>li>a{
 	font-size: 18px;
+	font-weight: 300;
 }
 
 
