@@ -1,0 +1,15 @@
+{%- include common/rest/workdir.liquid %}
+{%- assign dir = site_pages | where: "url", workdir | first -%}
+{% assign dirUrl = dir.url | split: "/" %}{% comment %} 截取目录文件夹的路径，这个和头部导航的相关联 {% endcomment %}
+<div class="header-box">
+    <div class="logo-box">
+        <img class="logo" src="{{ site.baseurl }}/assets/img/logo.png" />
+    </div>
+    
+    <ul class="nav-box">
+        {%- for workdir in workdir_dirs %}{% include templates/header_menu.liquid %}{% endfor -%}
+    </ul>
+    <div class="lang-box">
+        <div class="lang">中文</div>
+    </div>
+</div>

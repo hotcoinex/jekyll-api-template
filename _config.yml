@@ -1,0 +1,36 @@
+repository: yuyeleng/yuye.github.io  #自己的仓库地址
+github_url: https://github.com/yuyeleng #自己的github地址
+url: https://yuye.github.io #上面设置的https://YourGithubUserName.github.io
+
+title: jekyll-rtd-theme
+description: Just another documentation theme compatible with GitHub Pages
+
+theme: null
+markdown: kramdown
+kramdown:
+input: GFM
+# debug:
+#   compress: true
+#   dist: false
+#   shortcodes: true
+readme_index:
+  with_frontmatter: true
+
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+
+exclude:
+  - Makefile
+  - CNAME
+  - LICENSE
+  - update.sh
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
+  - node_modules
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - jekyll-rtd-theme.gemspec

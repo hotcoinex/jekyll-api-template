@@ -1,0 +1,36 @@
+<div class="sidebar-wrap overflow-hidden">
+    <div class="sidebar height-full overflow-x-hidden">
+        <!-- <div class="header d-flex flex-column text-center">
+            <div class="title">
+            	
+                <a class="h4 no-underline py-1 px-2 rounded-1" href="{{ site.baseurl }}/" title="{{ site.description }}">
+                    <i class="fa fa-home"></i> {{ site.title }}
+                </a>
+              
+            </div>
+            <span class="version">{{ docs.latest_release.name }}</span>
+            
+        </div> -->
+        <div class="menu-box">
+        	<!-- <form class="search" method="get" autocomplete="off">
+            <form class="search" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
+                <div class="form-search">
+                    <img src="../../assets/img/search.png" class="search-img" />
+                    <input class="form-control input-block input-sm" type="text" placeholder="搜索">
+                </div>
+          </form> -->
+          <div class="search">
+            <div class="form-search">
+                <img src="{{ site.baseurl }}/assets/img/search.png" class="search-img" />
+                <input class="form-control input-block input-sm" type="text" placeholder="搜索">
+            </div>
+          </div>
+          <ul class="search-val-box">
+            <!-- <li class="child-li"><a class="child-a active" href="#查看表格">查看表格</a></li> -->
+          </ul>
+          <div class="toctree" data-spy="affix" role="navigation" aria-label="main navigation">
+            {% include templates/toctree.liquid %}
+          </div>
+        </div>
+    </div>
+</div>
