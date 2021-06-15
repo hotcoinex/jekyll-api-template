@@ -70,6 +70,7 @@
 } */
 .markdown-body pre>code{
     color: #E5E5E5;
+    font-size: 14px;
 }
 pre code, .highlight .ow, .highlight .o{
     color: #E5E5E5;

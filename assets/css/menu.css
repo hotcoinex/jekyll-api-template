@@ -29,6 +29,13 @@
 	width: 100%;
 }
 
+.menu-box .toctree>ul li.toc a{
+	font-size: 20px;
+}
+.menu-box .toctree>.menu-uls .child-ul>li>a{
+	font-size: 18px;
+}
+
 
 .menu-box .toctree>.caption{
 	color: #FFFFFF;
