@@ -3,7 +3,7 @@ $(function(){
     var pageUrl = location.pathname
     var jsSrc =(navigator.language || navigator.browserLanguage).toLowerCase();
     var lang = "en"
-    console.log(jsSrc)
+    // console.log(jsSrc)
     if(jsSrc.indexOf('zh')>=0) {
         lang = 'zh'
     } else if(jsSrc.indexOf('en')>=0) {
@@ -42,8 +42,7 @@ $(function(){
 
     //设置语言
     // console.log('1')
-    var langStr = '中文'
-    var newLang = 'zh'
+    var langStr = '简体中文'
     var searchVal = ""
     var langObj = {
         zh: {
@@ -58,15 +57,32 @@ $(function(){
         }
     }
     // console.log('3')
-    if(lang === 'zh'){
-        langStr = 'English'
-        newLang = 'en'
+    if(lang === 'en'){
+      langStr = 'English'
     }
     // console.log('1')
     $(".input-block").attr('placeholder', langObj[lang].search)
     $(".lang-box>.lang").text(langStr)
-    $(".lang-box>.lang").click(function(){
-        window.location.href = locaHref.replace('/'+lang+'/', '/'+newLang+'/')
+    $(".lang-box>.lang").on('click', function(e){
+      if ($('.lang-dropdown').length === 0) {
+        $('.lang-box').append(`<div class="lang-dropdown show"><div data-lang="zh" class="lang-dropdown-item${
+            lang === 'zh' ? ' active' : ''
+          }">简体中文</div><div data-lang="en" class="lang-dropdown-item${
+            lang === 'en' ? ' active' : ''
+          }">English</div></div>`)
+        $('.lang-dropdown-item').on('click', function(e) {
+          if(!$(this).hasClass('active')) {
+            window.location.href = locaHref.replace('/'+lang+'/', '/'+$(this).data('lang')+'/')
+          }
+          e.stopPropagation()
+        })
+        $(document).on('click', function() {
+          $('.lang-dropdown').removeClass('show')
+        })
+      } else {
+        $('.lang-dropdown').toggleClass('show')
+      }
+      e.stopPropagation()
     })
     // console.log(lang)
     //隐藏非当前语言下的导航栏和目录
@@ -96,7 +112,7 @@ $(function(){
       })
 
     //实现滚动条下滑左侧菜单高亮
-    $(".content-box").scroll(function(){
+    $(".content-box").scroll(function(e){
       $('.markdown-box h3').each(function(){
         if($(this).offset().top < 230){
           $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").addClass('current').parents('.child-li').siblings().find(".child-a").removeClass('current')
@@ -148,7 +164,7 @@ $(function(){
     })
 
     $(".search-val-box").on('click', '.child-a', function(){
-      console.log(location.origin + thisHref)
+      // console.log(location.origin + thisHref)
       var thisHref = $(this).attr('data-href')
       
       window.location.href = location.origin + thisHref
@@ -205,7 +221,7 @@ $(function(){
           return content
             .slice(min, max)
             .replace(regexp, (match) => {
-              console.log(match)
+              // console.log(match)
               return `<span class="bg-yellow">${match}</span>`
             });
         }
@@ -280,12 +296,12 @@ $(function(){
         //   $(".search-results .summary").html(ui.i18n.search_results_not_found);
         }
         $(".search-results h2").html(ui.i18n.search_results);
+        selectSearchList()
       }
 
     highlight()
     function highlight() {//搜索匹配字符高亮
         let text = new URL(location.href).searchParams.get("highlight");
-        console.log(text)
         if (text) {
             $(".markdown-body")
             .find("*")
@@ -302,11 +318,86 @@ $(function(){
             // last node
             $(".search-result").each(function () {
             $(this).html(function (i, html) {
-                console.log(text)
+                // console.log(text)
                 return html.replace(text, `<span class="bg-yellow">${text}</span>`);
             });
             });
             $(".search input").val(text);
         }
     }
+
+    // 点击图标跳转到官网主页
+    $('.logo').on('click', function() {
+      window.open('https://hotcoin.com/')
+    })
+
+    initSearch()
+    // 初始化search列表展示与选中
+    function initSearch() {
+      const text = new URL(location.href).searchParams.get("highlight")
+      if (!text) return
+      // 初始化搜索列表
+      $.ajax(`${ui.baseurl}/data.json`)
+      .done((res) => {
+        search(res, text)
+        selectSearchList()
+      })
+      .fail((xhr, message) => debug(message))
+    }
+    function selectSearchList() {
+      const name = location.pathname + location.search
+      const link = $(".search-val-box").find(`[data-href="${decodeURI(name)}"]`)
+      if (link.length > 0) {
+        $(".search-val-box .active").removeClass("active")
+        link.addClass("active")
+      }
+    }
+    
+    // 复制按钮功能
+    initCopy()
+    function initCopy() {
+      $('.custom-code-title').append('<i class="custom-code-copy"></i>')
+      $('.custom-code-title').on('click', '.custom-code-copy', function(e) {
+        // 获取父级相邻元素子元素pre
+        const next = e.target.parentElement.nextElementSibling
+        copyDom($(next).find('pre')[0])
+      })
+    }
+    function copyDom(dom) {
+      if (!dom) return
+      const range = document.createRange()
+      range.selectNode(dom)
+      window.getSelection().removeAllRanges()
+      window.getSelection().addRange(range)
+      document.execCommand('copy')
+      window.getSelection().removeAllRanges()
+      range.detach()
+    }
+
+    // 监听滚轮事件自动切换左侧菜单
+    document.querySelector('.content-box').addEventListener('wheel', function (event) {
+      if (event.deltaY <= -100) {
+        // 向上滚
+        if ($('.content-box')[0].scrollTop === 0) {
+          // console.log('up end+++', event.deltaY)
+          $('.toc').each(function(index) {
+            if ($(this).hasClass('current') && index !== 0) {
+              window.location.pathname = $($($('.toc')[index - 1]).find('a')).attr('href')
+              return false
+            }
+          })
+        }
+      } else if (event.deltaY >= 100) {
+        // 向下滚
+        if ($('.content-box')[0].scrollTop + $('.content-box').height() >= $('.content-box')[0].scrollHeight) {
+          // console.log('down end+++++', event.deltaY)
+          $('.toc').each(function(index) {
+            if ($(this).hasClass('current') && index !== $('.toc').length - 1) {
+              window.location.pathname = $($($('.toc')[index + 1]).find('a')).attr('href')
+              return false
+            }
+          })
+        }
+      }
+    })
 })
