@@ -1,4 +1,4 @@
 ---
 sort: 1 # follow a certain sequence of letters or numbers
 ---
-# 现货
+# 现货（杠杆）

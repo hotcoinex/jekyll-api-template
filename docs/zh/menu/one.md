@@ -11,7 +11,7 @@ sort: 1 # follow a certain sequence of letters or numbers
 ### 代码段
 <p class='custom-code-title'>Response</p>
 
-```javascript
+```json
 {
   "data": [
     {
@@ -88,6 +88,7 @@ Parsing documentation for addressable-2.7.0
 Installing ri documentation for addressable-2.7.0
 
 ### json代码
+<p class='custom-code-title'>Response</p>
 ```json
 curl "https://api.huobi.pro/v2/account/deposit/address?currency=btc"
 ```

@@ -17,7 +17,7 @@ Gemfile.lock
 # npm
 node_modules
 package-lock.json
-
+.DS_Store
 
 # _sass
 _sass/@primer/css/**/*.md
