@@ -389,7 +389,7 @@ $(function(){
         }
       } else if (event.deltaY >= 100) {
         // 向下滚
-        if ($('.content-box')[0].scrollTop + $('.content-box').height() >= $('.content-box')[0].scrollHeight) {
+        if (Math.ceil($('.content-box')[0].scrollTop + $('.content-box')[0].clientHeight) >= $('.content-box')[0].scrollHeight) {
           // console.log('down end+++++', event.deltaY)
           $('.toc').each(function(index) {
             if ($(this).hasClass('current') && index !== $('.toc').length - 1) {

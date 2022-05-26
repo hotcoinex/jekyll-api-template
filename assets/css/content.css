@@ -58,14 +58,14 @@
     
 }
 .content-wrap.content-box .code-bg-box .code-bg-title span{
-    background: #212121;
+    background: #31312F;
     color: #F0F0F0;
     font-size: 14px;
     padding: 12px 28px;
     display: inline-block;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>h1{
-    border-bottom: none;
+    border-bottom: 1px solid #EEEEEE;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge{
     float: right;
