@@ -361,9 +361,10 @@ $(function(){
         // 获取父级相邻元素子元素pre
         const next = e.target.parentElement.nextElementSibling
         copyDom($(next).find('pre')[0])
-        
-        if ($(p).children('.custom-code-copy-tips').length) return
+
         // 复制成功提示
+        const p = e.target.parentElement
+        if ($(p).children('.custom-code-copy-tips').length) return
         const msg = lang == 'en' ? 'Copy success' : '复制成功'
         const div = $(`<div class="custom-code-copy-tips">${msg}</div>`)
         $(p).append(div)
