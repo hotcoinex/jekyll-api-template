@@ -129,6 +129,12 @@ pre code, .highlight .ow, .highlight .o{
     background-size: 100% 100%;
     cursor: pointer;
 }
+.content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-copy-tips {
+    position: absolute;
+    right: 12px;
+    top: -21px;
+    color: #e8c589;
+}
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight{
     padding: 20px 28px;
     border: none;
