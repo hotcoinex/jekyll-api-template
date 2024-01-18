@@ -33,25 +33,21 @@
 	font-size: 16px;
 	font-weight: bold;
 }
-.menu-box .toctree>.menu-uls .child-ul>li>a{
-	font-size: 14px;
-	font-weight: 400;
-}
 
 
 .menu-box .toctree>.caption{
 	color: #FFFFFF;
 	font-size: 18px;
-	background: #252321;
+	background: #121212;
 	padding-left: 20px !important;
 	height: 60px;
 	line-height: 60px;
 }
 .menu-box .toctree>ul>li{
-	background: #252321;
+	background: #121212;
 }
 /* .menu-box .toctree>ul li.current{
-	background: #E8C589;
+	background: #819CFF;
 } */
 .menu-box .toctree>ul li a{
 	font-size: 16px;
@@ -62,33 +58,33 @@
 	padding-left: 20px;
 }
 .menu-box .toctree>ul li a:hover{
-	color: #E8C589 !important;
+	color: #819CFF !important;
 }
 .menu-box .toctree>ul>li.current>a{
 	padding-left: 20px;
-	background: #252321;
+	background: #121212;
 }
 .menu-box .toctree>ul>li>a:hover{
-	background: #252321 !important;
-	color: #E8C589 !important;
+	background: rgba(129, 156, 255, 0.15) !important;
+	color: #819CFF !important;
 }
 .menu-box .toctree>ul li .content-toc{
-	background: #141418;
+	background: #121212;
 }
 .menu-box .toctree>ul li .content-toc li a{
 	padding-left: 40px;
 }
 .menu-box .toctree>ul li .content-toc li a:hover{
 	background: none;
-	color: #E8C589 !important;
+	color: #819CFF !important;
 }
 .menu-box .toctree>ul li a i{
 	display: none;
 }
 /* .menu-box .toctree>ul li.current>a,  */
 .menu-box  .toctree>ul .toc.current a.current{
-	background: rgba(232, 197, 137, 0.2) !important;
-	color: #E8C589 !important;
+	background: rgba(129, 156, 255, 0.15) !important;
+	color: #819CFF !important;
 	border-top: none;
 	border-bottom: none;
 }
@@ -103,7 +99,7 @@
 	display: block !important;
 }
 .toctree>.menu-uls>.toc>.child-ul{
-	background: #212121;
+	background: #121212;
 	display: none !important;
 }
 .child-ul li a{
@@ -111,22 +107,23 @@
     display: inline-block;
 }
 .child-ul li a.active{
-	background: #E8C589;
+	background: #819CFF;
 	color: #fff !important;
 }
 .toctree>ul .toc.current>.child-ul li a:hover{
-	background: none;
+	background: rgba(129, 156, 255, 0.15) !important;
+	color: #819CFF !important;
 }
 .toctree>ul .toc.current>.child-ul li a.active:hover{
-	background: #E8C589;
+	background: #819CFF;
 	color: #fff !important;
 }
 .toctree>ul.menu-uls>.toc.current{
-	background: #252321;
+	background: #121212;
 }
 .search{
 	padding: 12px 20px;
-	background-color: #252321;
+	background-color: #121212;
 }
 .form-search{
 	border: 1px solid #555555;
@@ -137,8 +134,8 @@
 	width: 100%;
 }
 .search-img{
-	width: 16px;
-	margin-left: 15px;
+	width: 14px;
+	margin-left: 14px;
 	margin-right: 8px;
 }
 .menu-box .search .input-block{
@@ -161,7 +158,10 @@
 	display: block;
 }
 .menu-box .toctree>.menu-uls .child-ul>li>a{
+	color: #E7E7E7 !important;
 	padding-left: 30px;
+	font-size: 14px;
+	font-weight: 400;
 }
 .search-val-box{
 	width: 100%;
@@ -175,7 +175,7 @@
 }
 
 .search-val-box{
-	background: #141418;
+	background: #161615;
 	padding-top: 5px;
 }
 .search-val-box .child-li{
@@ -184,7 +184,7 @@
 }
 .search-val-box .child-li a{
 	background: none;
-	color: #fff;
+	color: #E7E7E7;
 	padding: 0 20px;
 	font-size: 12px;
 	display: inline-block;
@@ -197,10 +197,10 @@
 }
 .search-val-box .child-li a:hover{
 	background: none;
-	color: #E8C589;
+	color: #819CFF;
 }
 .search-val-box .child-li a.active{
-	color: #E8C589;
+	color: #819CFF;
 	text-decoration: underline;
 	
 }

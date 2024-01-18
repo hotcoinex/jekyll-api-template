@@ -5,12 +5,12 @@
 }
 .content-wrap{
     margin-left: 0px !important;
-    background-color: #F7F9FA;
+    background-color: #FAFAFA;
 }
 .content-box .markdown-body{
     padding-bottom: 24px;
     font-size: 14px;
-    color: #333333;
+    color: #262626;
 }
 .content-box .markdown-body > h1 {
     padding: 0 28px !important;
@@ -41,9 +41,9 @@
     min-height: 100%;
 }
 .content-wrap.content-box .code-bg-box{
-    background: #31312F;
+    background: #121212;
     position: absolute;
-    border-top: 1px solid #212121;
+    border-top: 1px solid #121212;
     right: 0;
     top: 0px;
     height: 100%;
@@ -51,15 +51,15 @@
 }
 .content-wrap.content-box .code-bg-box .code-bg-title{
     width: 100%;
-    background: #292929;
+    background: #202226;
     position: fixed;
     z-index: 100;
     top: 72px;
     
 }
 .content-wrap.content-box .code-bg-box .code-bg-title span{
-    background: #31312F;
-    color: #F0F0F0;
+    background: #121212;
+    color: #FFFFFF;
     font-size: 14px;
     padding: 12px 28px;
     display: inline-block;
@@ -73,7 +73,7 @@
     width: 40%;
     margin-right: 0;
     margin-left: 0;
-    background: #292929;
+    background: #121212;
     padding-left: 20px;
     padding-right: 20px;
     clear: both;
@@ -92,15 +92,15 @@
     color: #66d9ef;
 } */
 .markdown-body pre>code{
-    color: #E5E5E5;
+    color: #E7E7E7;
     font-size: 12px;
 }
 pre code, .highlight .ow, .highlight .o{
-    color: #E5E5E5;
+    color: #E7E7E7;
 }
 .highlight .err{
     background: none;
-    color: #E5E5E5;
+    color: #E7E7E7;
 }
 
 .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title{
@@ -110,12 +110,12 @@ pre code, .highlight .ow, .highlight .o{
     width: 40%;
     margin-right: 0;
     margin-left: 0;
-    background: #212121;
+    background: #202226;
     padding: 13px 20px;
     clear: both;
     margin-bottom: 0px;
     position: relative;
-    color: #F0F0F0;
+    color: #FFFFFF;
     font-size: 14px;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-copy {
@@ -133,7 +133,7 @@ pre code, .highlight .ow, .highlight .o{
     position: absolute;
     right: 12px;
     top: -21px;
-    color: #e8c589;
+    color: #819CFF;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight{
     padding: 20px 28px;
@@ -160,7 +160,8 @@ pre code, .highlight .ow, .highlight .o{
 .content-box .markdown-body blockquote{
     margin-left: 28px;
     margin-right: 28px;
-    background: #efefef;
+    background: #eeeeee;
+    color: #666666;
     padding: 10px 20px;
     width: calc(60% - 56px);
     border-left: none;
@@ -190,7 +191,7 @@ pre code, .highlight .ow, .highlight .o{
     .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge{
         float: none;
         width: calc(100% - 56px);
-        background: #22262F;
+        background: #121212;
         margin: 20px 28px; 
     }
     .content-wrap.content-box .code-bg-box{
