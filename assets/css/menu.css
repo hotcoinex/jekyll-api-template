@@ -165,9 +165,8 @@
 }
 .search-val-box{
 	width: 100%;
-	max-height: 255px;
+	max-height: 300px;
 	overflow-y: auto;
-	height: 255px;
 	display: none;
 }
 .child-a{
@@ -177,6 +176,10 @@
 .search-val-box{
 	background: #161615;
 	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.search-val-box > li:not(.child-li) {
+	text-align: left !important;
 }
 .search-val-box .child-li{
 	

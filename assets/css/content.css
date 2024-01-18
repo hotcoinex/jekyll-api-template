@@ -142,11 +142,11 @@ pre code, .highlight .ow, .highlight .o{
     background: none;
 }
 .markdown-box .bg-yellow{
-    background: rgb(255,255,0) !important;
+    background: #A7C4FF !important;
     padding: 2px 4px;
     margin: 0px 3px;
     border-radius: 2px;
-    color: #000;
+    color: #262626;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight{
   padding: 0px;
