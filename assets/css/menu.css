@@ -159,7 +159,7 @@
 }
 .menu-box .toctree>.menu-uls .child-ul>li>a{
 	color: #E7E7E7 !important;
-	padding-left: 30px;
+	padding-left: 40px;
 	font-size: 14px;
 	font-weight: 400;
 }
@@ -174,9 +174,9 @@
 }
 
 .search-val-box{
-	background: #161615;
+	background: #1D1D1E;
 	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-bottom: 20px;
 }
 .search-val-box > li:not(.child-li) {
 	text-align: left !important;
